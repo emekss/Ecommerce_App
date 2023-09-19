@@ -6,44 +6,44 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        body: Stack(children: [
-          Container(
-            decoration: const BoxDecoration(
-              image: DecorationImage(
-                image: AssetImage(
-                  'asset/thomas.jpeg',
-                ),
-                fit: BoxFit.cover,
-              ),
-            ),
-          ),
-        ]),
-        bottomNavigationBar: Container(
+      body: Stack(children: [
+        Container(
           decoration: const BoxDecoration(
-            color: Colors.white,
+            image: DecorationImage(
+              image: AssetImage(
+                'assets/images/manu_1.jpg',
+              ),
+              fit: BoxFit.cover,
+            ),
           ),
-          padding: const EdgeInsets.all(16),
-          height: 250,
-          child: Column(children: [
-            const Text(
-              'Look Good,Feel Good',
-              style: TextStyle(
-                fontWeight: FontWeight.bold,
-                fontSize: 25,
-              ),
+        ),
+        Align(
+          alignment: Alignment.bottomCenter,
+          child: Container(
+            decoration: const BoxDecoration(
+              borderRadius: BorderRadius.all(Radius.circular(40)),
+              color: Colors.white,
             ),
-            const SizedBox(height: 5),
-            const Text(
-              'Create your Individual and unique style and look amazing everyday.',
-              textAlign: TextAlign.center,
-              style: TextStyle(
-                fontSize: 18,
+            padding: const EdgeInsets.all(16),
+            height: 250,
+            child: Column(children: [
+              const Text(
+                'Look Good,Feel Good',
+                style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                  fontSize: 25,
+                ),
               ),
-            ),
-            const SizedBox(height: 10),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: [
+              const SizedBox(height: 5),
+              const Text(
+                'Create your Individual and unique style and look amazing everyday.',
+                textAlign: TextAlign.center,
+                style: TextStyle(
+                  fontSize: 18,
+                ),
+              ),
+              const SizedBox(height: 10),
+              Row(mainAxisAlignment: MainAxisAlignment.spaceEvenly, children: [
                 ElevatedButton(
                   style: const ButtonStyle(
                     minimumSize: MaterialStatePropertyAll(Size(70, 70)),
@@ -66,15 +66,17 @@ class HomePage extends StatelessWidget {
                     style: TextStyle(color: Colors.black, fontSize: 20),
                   ),
                 ),
-              ],
-            ),
-            TextButton(
-                onPressed: () {},
-                child: const Text(
-                  'Skip',
-                  style: TextStyle(fontSize: 20, color: Colors.black),
-                ))
-          ]),
-        ));
+              ]),
+              TextButton(
+                  onPressed: () {},
+                  child: const Text(
+                    'Skip',
+                    style: TextStyle(fontSize: 20, color: Colors.black),
+                  ))
+            ]),
+          ),
+        ),
+      ]),
+    );
   }
 }

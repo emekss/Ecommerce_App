@@ -47,3 +47,69 @@ Widget customTextField({
     ),
   );
 }
+
+Widget catLogo({
+  required String logoTitle,
+  required Image image,
+}) {
+  return Card(
+    child: Card(
+      elevation: 6,
+      child: Container(
+          width: 100,
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(12),
+          ),
+          padding: const EdgeInsets.all(8.0),
+          child: Row(
+            children: [Text(logoTitle)],
+          )),
+    ),
+  );
+}
+
+Widget navIcon({
+  required Icon icon,
+}) {
+  return IconButton(
+    iconSize: 30,
+    onPressed: () {},
+    icon: icon,
+  );
+}
+
+Widget productLabel({
+  required String label,
+}) {
+  return Text(
+    label,
+    style: const TextStyle(
+      fontSize: 14,
+      color: Color(0xFF8F959E),
+    ),
+  );
+}
+
+Widget sizeButton({
+  required String label,
+}) {
+  return Padding(
+    padding: const EdgeInsets.all(6.0),
+    child: ElevatedButton(
+      style: const ButtonStyle(
+        backgroundColor: MaterialStatePropertyAll(
+          Color(0xFFF5F6FA),
+        ),
+      ),
+      onPressed: () {},
+      child: Text(
+        label,
+        style: const TextStyle(
+          color: Colors.black,
+          fontSize: 19,
+          fontWeight: FontWeight.bold,
+        ),
+      ),
+    ),
+  );
+}

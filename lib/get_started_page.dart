@@ -53,7 +53,7 @@ class GetStartedPage extends StatelessWidget {
             icon: FontAwesomeIcons.google,
             onTap: () {},
             context: context,
-          ),
+          )
         ]),
         Column(children: [
           RichText(

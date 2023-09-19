@@ -31,7 +31,7 @@ class _WelcomePageState extends State<WelcomePage> {
         const Padding(
           padding: EdgeInsets.all(8.0),
           child: Text(
-            'Welcome \n Please enter your data to continue',
+            'Welcome',
             style: TextStyle(
               fontWeight: FontWeight.bold,
               fontSize: 30,
@@ -85,20 +85,38 @@ class _WelcomePageState extends State<WelcomePage> {
             ],
           ),
         ),
-        Container(
-          width: MediaQuery.of(context).size.width,
-          height: 75,
-          color: const Color(0xff9775fa),
-          child: const Text(
-            'Sign In',
-            style: TextStyle(
-              color: Colors.white,
-              fontSize: 20,
-              fontWeight: FontWeight.bold,
-            ),
+        Column(children: [
+          RichText(
             textAlign: TextAlign.center,
+            text: const TextSpan(
+              text:
+                  'By connecting your account confirm that you agree \n with our ',
+              style: TextStyle(fontSize: 14, color: Colors.black),
+              children: <TextSpan>[
+                TextSpan(
+                  text: 'Terms and Conditions',
+                  style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                  ),
+                )
+              ],
+            ),
           ),
-        ),
+          Container(
+            width: MediaQuery.of(context).size.width,
+            height: 75,
+            color: const Color(0xff9775fa),
+            child: const Text(
+              'Sign In',
+              style: TextStyle(
+                color: Colors.white,
+                fontSize: 20,
+                fontWeight: FontWeight.bold,
+              ),
+              textAlign: TextAlign.center,
+            ),
+          ),
+        ]),
       ]),
     );
   }
