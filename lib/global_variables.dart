@@ -4,10 +4,7 @@ final products = [
     'title': 'Arsenal Home kit 23/24',
     'price': '£20',
     'sizes': ['S, M, L, XL, XXL'],
-    'imageMain': 'assets/images/arsehm1.jpg',
-    'image1': 'assets/images/arsehm1.jpg',
-    'image2': 'assets/images/arsehm2.jpg',
-    'image3': 'assets/images/arsehm3.jpg',
+    'imageUrl': 'assets/images/arsehm1.jpg',
     'company': 'Arsenal'
   },
   {
@@ -15,10 +12,7 @@ final products = [
     'title': 'Manchester United Kit 23/24',
     'price': '£75',
     'sizes': ['S, M, L, XL, XXL'],
-    'imageMain': 'assets/images/manuthird1.jpg',
-    'image1': 'assets/images/manuthird2.jpg',
-    'image2': 'assets/images/manuthird3.jpg',
-    'image3': 'assets/images/manuthird1.jpg',
+    'imageUrl': 'assets/images/manuthird1.jpg',
     'company': 'Manchester United'
   },
   {
