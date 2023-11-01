@@ -41,7 +41,7 @@ class _CartHomePageState extends State<CartHomePage> {
             children: [
               const DrawerHeader(
                 child: Icon(
-                  Icons.shopping_bag,
+                  Icons.shopping_cart_checkout_outlined,
                 ),
               ),
               Row(

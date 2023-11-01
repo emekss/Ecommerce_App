@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:lorem_ipsum_generator/lorem_ipsum_generator.dart';
 import 'package:sample_project/custom_widget.dart';
 
 class DetailsPage extends StatefulWidget {
