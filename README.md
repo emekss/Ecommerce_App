@@ -11,8 +11,9 @@ Welcome to the E-Commerce App built using Flutter! This README provides an overv
     - [Prerequisites](#prerequisites)
     - [Installation](#installation)
 3. [Usage](#usage)
-4. [Contributing](#contributing)
-5. [License](#license)
+4. Screenshot
+5. [Contributing](#contributing)
+6. [License](#license)
 
 ## Features
 
