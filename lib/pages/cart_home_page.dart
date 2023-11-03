@@ -1,5 +1,6 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-
+import 'package:cupertino_icons/cupertino_icons.dart';
 import 'package:sample_project/global_variables.dart';
 import 'package:sample_project/product_card.dart';
 
@@ -40,9 +41,7 @@ class _CartHomePageState extends State<CartHomePage> {
           child: Column(
             children: [
               const DrawerHeader(
-                child: Icon(
-                  Icons.shopping_cart_checkout_outlined,
-                ),
+                child: CupertinoIcons(Icon())
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
