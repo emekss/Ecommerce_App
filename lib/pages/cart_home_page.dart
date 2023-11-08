@@ -2,7 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:cupertino_icons/cupertino_icons.dart';
 import 'package:sample_project/global_variables.dart';
-import 'package:sample_project/product_card.dart';
+import 'package:sample_project/components/product_card.dart';
 
 class CartHomePage extends StatefulWidget {
   const CartHomePage({super.key});
@@ -13,12 +13,10 @@ class CartHomePage extends StatefulWidget {
 
 class _CartHomePageState extends State<CartHomePage> {
   final List<String> filters = const [
-    'Real Madrid',
-    'Ac Milan',
-    'Arsenal',
-    'Manchester United',
-    'Liverpool',
-    'Manchester City',
+    'assets/images/adidas.png',
+    'assets/images/puma.png',
+    'assets/images/fila.png',
+    'assets/images/nike.png',
   ];
 
   @override
@@ -40,9 +38,6 @@ class _CartHomePageState extends State<CartHomePage> {
         drawer: Drawer(
           child: Column(
             children: [
-              const DrawerHeader(
-                child: CupertinoIcons(Icon())
-              ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
@@ -181,27 +176,12 @@ class _CartHomePageState extends State<CartHomePage> {
                     ),
                   )
                 ]),
-            SizedBox(
-              height: 70,
-              child: ListView.builder(
-                scrollDirection: Axis.horizontal,
-                itemCount: filters.length,
-                itemBuilder: (context, index) {
-                  final filter = filters[index];
-                  return Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 8.0),
-                    child: Chip(
-                      backgroundColor: const Color(0xffF5F6FA),
-                      shape: ContinuousRectangleBorder(
-                          borderRadius: BorderRadius.circular(10)),
-                      label: Text(filter),
-                      labelStyle: const TextStyle(fontSize: 17),
-                      padding: const EdgeInsets.symmetric(
-                          horizontal: 20, vertical: 15),
-                    ),
-                  );
-                },
-              ),
+            Row(
+              children: [
+                Image.asset(
+                  'assets/images/nike.png',
+                )
+              ],
             ),
             const Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,

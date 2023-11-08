@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_switch/flutter_switch.dart';
 
-import '../custom_widget.dart';
+import '../components/custom_widget.dart';
 
 class WelcomePage extends StatefulWidget {
   const WelcomePage({super.key});

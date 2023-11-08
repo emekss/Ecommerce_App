@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:sample_project/custom_widget.dart';
+import 'package:sample_project/components/custom_widget.dart';
 
 class DetailsPage extends StatefulWidget {
   const DetailsPage({super.key});

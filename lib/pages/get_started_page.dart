@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:sample_project/custom_widget.dart';
+import 'package:sample_project/components/custom_widget.dart';
 
 class GetStartedPage extends StatelessWidget {
   const GetStartedPage({super.key});

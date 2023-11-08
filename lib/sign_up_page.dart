@@ -1,6 +1,6 @@
 import 'package:flutter_switch/flutter_switch.dart';
 import 'package:flutter/material.dart';
-import 'package:sample_project/custom_widget.dart';
+import 'package:sample_project/components/custom_widget.dart';
 
 class SignUpPage extends StatefulWidget {
   const SignUpPage({super.key});
