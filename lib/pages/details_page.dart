@@ -10,12 +10,11 @@ class DetailsPage extends StatefulWidget {
 }
 
 class _DetailsPageState extends State<DetailsPage> {
-  String mainView = 'assets/images/manu2.jpeg';
-  String image1 = 'assets/images/manu2.jpeg';
-  String image2 = 'assets/images/manu3.jpeg';
-  String image3 = 'assets/images/manu4.jpeg';
-  String image4 = 'assets/images/manu5.jpeg';
-  String image5 = 'assets/images/manuthird3.jpeg';
+  String mainView = 'assets/images/mainhoddie.png';
+  String image1 = 'assets/images/facehoodie.png';
+  String image2 = 'assets/images/handhoodie.png';
+  String image3 = 'assets/images/neckhoodie.png';
+  String image4 = 'assets/images/backhoodie.png';
 
   List<String> size = const ['S', 'M', 'L', 'XL', '2XL'];
 
@@ -59,7 +58,7 @@ class _DetailsPageState extends State<DetailsPage> {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      productLabel(label: 'Premier League Jersey'),
+                      productLabel(label: 'Mens Printed Pullover Hoodie'),
                       productLabel(label: 'Price')
                     ],
                   ),
@@ -67,15 +66,17 @@ class _DetailsPageState extends State<DetailsPage> {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Text(
-                        'Manchester United Kit 23/24',
+                        'Nike Club Fleece',
                         style: TextStyle(
                           fontSize: 24,
+                          fontWeight: FontWeight.bold,
                         ),
                       ),
                       Text(
-                        '£50',
+                        '£120',
                         style: TextStyle(
                           fontSize: 24,
+                          fontWeight: FontWeight.bold,
                         ),
                       ),
                     ],
@@ -134,10 +135,10 @@ class _DetailsPageState extends State<DetailsPage> {
                     child: InkWell(
                       onTap: () {
                         setState(() {
-                          mainView = image5;
+                          mainView = image4;
                         });
                       },
-                      child: Image.asset(image5),
+                      child: Image.asset(image4),
                     ),
                   ),
                 ],
