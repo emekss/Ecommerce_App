@@ -38,6 +38,8 @@ dependencies:
   flutter_switch: ^0.3.2
   numeric_keyboard: ^1.1.0
   lorem_ipsum_generator: ^0.0.3
+  rating_bar_flutter: ^1.0.2
+  flutter_rating_bar: ^4.0.1
 
 dev_dependencies:
   flutter_test:

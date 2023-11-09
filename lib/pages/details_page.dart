@@ -15,6 +15,7 @@ class _DetailsPageState extends State<DetailsPage> {
   String image2 = 'assets/images/handhoodie.png';
   String image3 = 'assets/images/neckhoodie.png';
   String image4 = 'assets/images/backhoodie.png';
+  String image5 = 'assets/images/mainhoddie.png';
 
   List<String> size = const ['S', 'M', 'L', 'XL', '2XL'];
 
@@ -35,7 +36,7 @@ class _DetailsPageState extends State<DetailsPage> {
             IconButton(
               onPressed: () {},
               icon: const Icon(
-                Icons.shopping_bag_outlined,
+                Icons.shopping_bag_rounded,
                 color: Colors.black,
               ),
             ),
@@ -135,10 +136,10 @@ class _DetailsPageState extends State<DetailsPage> {
                     child: InkWell(
                       onTap: () {
                         setState(() {
-                          mainView = image4;
+                          mainView = image5;
                         });
                       },
-                      child: Image.asset(image4),
+                      child: Image.asset(image5),
                     ),
                   ),
                 ],
@@ -152,20 +153,23 @@ class _DetailsPageState extends State<DetailsPage> {
                 productLabel(label: 'Size Guide')
               ],
             ),
+
+            // Size Row
             SizedBox(
               height: 89,
-              child: Expanded(
-                child: GridView.builder(
-                    itemCount: size.length,
-                    gridDelegate:
-                        const SliverGridDelegateWithFixedCrossAxisCount(
-                            crossAxisCount: 5),
-                    itemBuilder: (context, index) {
-                      return sizeButton(label: size[index]);
-                    }),
-              ),
+              child: GridView.builder(
+                  itemCount: size.length,
+                  gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                      crossAxisCount: 5),
+                  itemBuilder: (context, index) {
+                    return sizeButton(label: size[index]);
+                  }),
             ),
+
+            // Description Column
+
             const Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
                   'Description',
@@ -174,7 +178,9 @@ class _DetailsPageState extends State<DetailsPage> {
                     fontSize: 19,
                   ),
                 ),
-                Text('data')
+                Text(
+                  'The Nike Throwback Pullover Hoodie is made from premium French terry fabric that blends a performance feel with Read More..',
+                )
               ],
             )
           ],
