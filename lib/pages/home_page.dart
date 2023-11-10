@@ -44,28 +44,33 @@ class HomePage extends StatelessWidget {
               ),
               const SizedBox(height: 10),
               Row(mainAxisAlignment: MainAxisAlignment.spaceEvenly, children: [
-                ElevatedButton(
-                  style: const ButtonStyle(
-                    minimumSize: MaterialStatePropertyAll(Size(70, 70)),
-                    backgroundColor: MaterialStatePropertyAll(Colors.white),
-                  ),
-                  onPressed: () {
+                GestureDetector(
+                  onTap: () {
                     Navigator.pushNamed(context, 'getStartedPage');
                   },
-                  child: const Text(
-                    'Men',
-                    style: TextStyle(color: Colors.black, fontSize: 20),
+                  child: Card(
+                    child: Container(
+                      decoration: BoxDecoration(color: const Color(0xF5F6FA)),
+                      height: 60,
+                      width: 152,
+                      child: const Center(
+                          child: Text(
+                        'Men',
+                        style: TextStyle(fontSize: 19),
+                      )),
+                    ),
                   ),
                 ),
-                ElevatedButton(
-                  style: const ButtonStyle(
-                    minimumSize: MaterialStatePropertyAll(Size(70, 70)),
-                    backgroundColor: MaterialStatePropertyAll(Colors.white),
-                  ),
-                  onPressed: () {},
-                  child: const Text(
-                    'Women',
-                    style: TextStyle(color: Colors.black, fontSize: 20),
+                Card(
+                  child: Container(
+                    decoration: BoxDecoration(color: const Color(0xF5F6FA)),
+                    height: 60,
+                    width: 152,
+                    child: const Center(
+                        child: Text(
+                      'Women',
+                      style: TextStyle(fontSize: 19),
+                    )),
                   ),
                 ),
               ]),

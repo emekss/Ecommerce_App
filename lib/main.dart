@@ -4,6 +4,7 @@ import 'package:sample_project/pages/cart_home_page.dart';
 
 import 'package:sample_project/pages/details_page.dart';
 import 'package:sample_project/pages/get_started_page.dart';
+import 'package:sample_project/pages/home_page.dart';
 import 'package:sample_project/pages/reviews_page.dart';
 
 import 'package:sample_project/pages/sign_up_page.dart';
@@ -18,7 +19,7 @@ class SampleProject extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: const WelcomePage(),
+      home: const ReviewPage(),
       routes: {
         'getStartedPage': (context) => const GetStartedPage(),
         'signUpPage': (context) => const SignUpPage(),

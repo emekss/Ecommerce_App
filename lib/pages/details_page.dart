@@ -44,194 +44,202 @@ class _DetailsPageState extends State<DetailsPage> {
             ),
           ]),
       body: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 8),
-        child: Column(
-          children: [
-            SizedBox(
-              height: 207,
-              child: Image.asset(
-                mainView,
-                fit: BoxFit.fill,
+        padding: const EdgeInsets.symmetric(horizontal: 18),
+        child: SingleChildScrollView(
+          child: Column(
+            children: [
+              SizedBox(
+                height: 208,
+                child: Image.asset(
+                  mainView,
+                  fit: BoxFit.fill,
+                ),
               ),
-            ),
-            SizedBox(
-              height: 46,
-              child: Column(
+              const SizedBox(height: 20),
+              SizedBox(
+                height: 47,
+                child: Column(
+                  children: [
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        productLabel(label: 'Mens Printed Pullover Hoodie'),
+                        productLabel(label: 'Price')
+                      ],
+                    ),
+                    const Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Text(
+                          'Nike Club Fleece',
+                          style: TextStyle(
+                            fontSize: 24,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                        Text(
+                          '\$125',
+                          style: TextStyle(
+                            fontSize: 24,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                      ],
+                    )
+                  ],
+                ),
+              ),
+              const SizedBox(height: 20),
+              SizedBox(
+                height: 77,
+                width: MediaQuery.of(context).size.width,
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [
+                    Expanded(
+                      child: InkWell(
+                        onTap: () {
+                          setState(() {
+                            mainView = image1;
+                          });
+                        },
+                        child: Image.asset(image1),
+                      ),
+                    ),
+                    Expanded(
+                      child: InkWell(
+                        onTap: () {
+                          setState(() {
+                            mainView = image2;
+                          });
+                        },
+                        child: Image.asset(image2),
+                      ),
+                    ),
+                    Expanded(
+                      child: InkWell(
+                        onTap: () {
+                          setState(() {
+                            mainView = image3;
+                          });
+                        },
+                        child: Image.asset(image3),
+                      ),
+                    ),
+                    Expanded(
+                      child: InkWell(
+                        onTap: () {
+                          setState(() {
+                            mainView = image4;
+                          });
+                        },
+                        child: Image.asset(image4),
+                      ),
+                    ),
+                    Expanded(
+                      child: InkWell(
+                        onTap: () {
+                          setState(() {
+                            mainView = image5;
+                          });
+                        },
+                        child: Image.asset(image5),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              const SizedBox(height: 10),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  productLabel(label: 'Size'),
+                  productLabel(label: 'Size Guide')
+                ],
+              ),
+
+              // Size Row
+              SizedBox(
+                height: 75,
+                child: GridView.builder(
+                    itemCount: size.length,
+                    gridDelegate:
+                        const SliverGridDelegateWithFixedCrossAxisCount(
+                            crossAxisCount: 5),
+                    itemBuilder: (context, index) {
+                      return sizeButton(label: size[index]);
+                    }),
+              ),
+
+              const SizedBox(height: 20),
+
+              // Description Column
+
+              const Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    'Description',
+                    style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      fontSize: 19,
+                    ),
+                  ),
+                  SizedBox(height: 10),
+                  Text(
+                    'The Nike Throwback Pullover Hoodie is made from premium French terry fabric that blends a performance feel with Read More..',
+                  )
+                ],
+              ),
+              const SizedBox(height: 20),
+              Column(
                 children: [
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      productLabel(label: 'Mens Printed Pullover Hoodie'),
-                      productLabel(label: 'Price')
+                      const Text(
+                        'Reviews',
+                        style: TextStyle(
+                            fontSize: 19, fontWeight: FontWeight.bold),
+                      ),
+                      GestureDetector(
+                          onTap: () {
+                            Navigator.pushNamed(context, 'reviewPage');
+                          },
+                          child: const Text('View All')),
                     ],
                   ),
-                  const Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Text(
-                        'Nike Club Fleece',
-                        style: TextStyle(
-                          fontSize: 24,
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
-                      Text(
-                        '\$125',
-                        style: TextStyle(
-                          fontSize: 24,
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
-                    ],
+                  const SizedBox(height: 10),
+                  const ReviewColumn(
+                    customerName: 'Jonathan James',
+                    customerImage: AssetImage('assets/images/profile3.png'),
                   )
                 ],
               ),
-            ),
-            const SizedBox(height: 21),
-            SizedBox(
-              height: 77,
-              width: MediaQuery.of(context).size.width,
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              const SizedBox(height: 20),
+              const Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Expanded(
-                    child: InkWell(
-                      onTap: () {
-                        setState(() {
-                          mainView = image1;
-                        });
-                      },
-                      child: Image.asset(image1),
-                    ),
+                  Column(
+                    children: [
+                      Text(
+                        'Total Price',
+                        style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          fontSize: 17,
+                        ),
+                      ),
+                      Text('with VAT,SD')
+                    ],
                   ),
-                  Expanded(
-                    child: InkWell(
-                      onTap: () {
-                        setState(() {
-                          mainView = image2;
-                        });
-                      },
-                      child: Image.asset(image2),
-                    ),
-                  ),
-                  Expanded(
-                    child: InkWell(
-                      onTap: () {
-                        setState(() {
-                          mainView = image3;
-                        });
-                      },
-                      child: Image.asset(image3),
-                    ),
-                  ),
-                  Expanded(
-                    child: InkWell(
-                      onTap: () {
-                        setState(() {
-                          mainView = image4;
-                        });
-                      },
-                      child: Image.asset(image4),
-                    ),
-                  ),
-                  Expanded(
-                    child: InkWell(
-                      onTap: () {
-                        setState(() {
-                          mainView = image5;
-                        });
-                      },
-                      child: Image.asset(image5),
-                    ),
-                  ),
+                  Text(
+                    '\$125',
+                    style: TextStyle(fontSize: 19, fontWeight: FontWeight.bold),
+                  )
                 ],
               ),
-            ),
-            const SizedBox(height: 10),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                productLabel(label: 'Size'),
-                productLabel(label: 'Size Guide')
-              ],
-            ),
-
-            // Size Row
-            SizedBox(
-              height: 75,
-              child: GridView.builder(
-                  itemCount: size.length,
-                  gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                      crossAxisCount: 5),
-                  itemBuilder: (context, index) {
-                    return sizeButton(label: size[index]);
-                  }),
-            ),
-
-            // Description Column
-
-            const Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
-                  'Description',
-                  style: TextStyle(
-                    fontWeight: FontWeight.bold,
-                    fontSize: 19,
-                  ),
-                ),
-                Text(
-                  'The Nike Throwback Pullover Hoodie is made from premium French terry fabric that blends a performance feel with Read More..',
-                )
-              ],
-            ),
-            const SizedBox(height: 10),
-            Column(
-              children: [
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    const Text(
-                      'Reviews',
-                      style:
-                          TextStyle(fontSize: 19, fontWeight: FontWeight.bold),
-                    ),
-                    GestureDetector(
-                        onTap: () {
-                          Navigator.pushNamed(context, 'reviewPage');
-                        },
-                        child: const Text('View All')),
-                  ],
-                ),
-                const ReviewColumn(
-                  customerName: 'Jonathan James',
-                  customerImage: AssetImage('assets/images/profile3.png'),
-                )
-              ],
-            ),
-            const SizedBox(height: 10),
-            const Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Column(
-                  children: [
-                    Text(
-                      'Total Price',
-                      style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                        fontSize: 17,
-                      ),
-                    ),
-                    Text('with VAT,SD')
-                  ],
-                ),
-                Text(
-                  '\$125',
-                  style: TextStyle(fontSize: 19, fontWeight: FontWeight.bold),
-                )
-              ],
-            ),
-          ],
+            ],
+          ),
         ),
       ),
       bottomNavigationBar: const BottomNavbarButton(

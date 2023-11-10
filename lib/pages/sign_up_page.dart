@@ -1,5 +1,6 @@
 import 'package:flutter_switch/flutter_switch.dart';
 import 'package:flutter/material.dart';
+import 'package:sample_project/components/bottom_navbar_button.dart';
 import 'package:sample_project/components/custom_widget.dart';
 
 class SignUpPage extends StatefulWidget {
@@ -16,17 +17,17 @@ class _SignUpPageState extends State<SignUpPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        elevation: 0,
         backgroundColor: Colors.white,
         leading: IconButton(
           onPressed: () {},
           icon: const Icon(
-            Icons.arrow_back,
+            Icons.arrow_back_ios_new_rounded,
             color: Colors.black,
           ),
         ),
       ),
-      body:
-          Column(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
+      body: Column(children: [
         const Padding(
           padding: EdgeInsets.all(8.0),
           child: Text(
@@ -37,6 +38,7 @@ class _SignUpPageState extends State<SignUpPage> {
             ),
           ),
         ),
+        const SizedBox(height: 150),
         Padding(
           padding: const EdgeInsets.all(16.0),
           child: Column(
@@ -73,26 +75,12 @@ class _SignUpPageState extends State<SignUpPage> {
             ],
           ),
         ),
-        GestureDetector(
+      ]),
+      bottomNavigationBar: GestureDetector(
           onTap: () {
             Navigator.pushNamed(context, 'welcomePage');
           },
-          child: Container(
-            width: MediaQuery.of(context).size.width,
-            height: 75,
-            color: const Color(0xff9775fa),
-            child: const Text(
-              'Sign Up',
-              style: TextStyle(
-                color: Colors.white,
-                fontSize: 20,
-                fontWeight: FontWeight.bold,
-              ),
-              textAlign: TextAlign.center,
-            ),
-          ),
-        ),
-      ]),
+          child: const BottomNavbarButton(buttonLabel: 'Sign Up')),
     );
   }
 }

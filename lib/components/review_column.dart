@@ -29,14 +29,18 @@ class _ReviewColumnState extends State<ReviewColumn> {
                     radius: 20,
                     backgroundImage: (widget.customerImage),
                   ),
-                  const SizedBox(height: 10),
+                  const SizedBox(
+                    width: 5,
+                  ),
                   Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
                         widget.customerName,
                         style: const TextStyle(
                             fontWeight: FontWeight.bold, fontSize: 17),
                       ),
+                      const SizedBox(height: 3),
                       const Row(
                         children: [
                           Icon(
@@ -61,6 +65,7 @@ class _ReviewColumnState extends State<ReviewColumn> {
                     style: const TextStyle(
                         fontSize: 16, fontWeight: FontWeight.bold),
                   ),
+                  const SizedBox(height: 3),
                   RatingBar.builder(
                     itemSize: 20,
                     maxRating: 5,
@@ -85,7 +90,7 @@ class _ReviewColumnState extends State<ReviewColumn> {
               ),
             ],
           ),
-          const SizedBox(height: 5),
+          const SizedBox(height: 10),
           const Text(
             'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
             maxLines: 3,

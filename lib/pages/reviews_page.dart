@@ -31,49 +31,52 @@ class _ReviewPageState extends State<ReviewPage> {
         ),
       ),
       body: const SingleChildScrollView(
-        child: Column(
-          children: [
-            Padding(
-              padding: EdgeInsets.symmetric(horizontal: 15),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text(
-                        '245 Reviews',
-                        style: TextStyle(
-                            fontSize: 17, fontWeight: FontWeight.bold),
-                      ),
-                      StarRating(),
-                    ],
-                  ),
-                  AddReviewButton()
-                ],
+        child: Padding(
+          padding: EdgeInsets.all(10.0),
+          child: Column(
+            children: [
+              Padding(
+                padding: EdgeInsets.symmetric(horizontal: 10),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          '245 Reviews',
+                          style: TextStyle(
+                              fontSize: 17, fontWeight: FontWeight.bold),
+                        ),
+                        StarRating(),
+                      ],
+                    ),
+                    AddReviewButton()
+                  ],
+                ),
               ),
-            ),
-            ReviewColumn(
-              customerName: 'Jenny Wilson',
-              customerImage: AssetImage('assets/images/profile1.png'),
-            ),
-            ReviewColumn(
-              customerName: 'Richard Ronalds',
-              customerImage: AssetImage('assets/images/profile2.png'),
-            ),
-            ReviewColumn(
-              customerName: 'Michael Jordan',
-              customerImage: AssetImage('assets/images/profile3.png'),
-            ),
-            ReviewColumn(
-              customerName: 'Samson Greg',
-              customerImage: AssetImage('assets/images/profile4.png'),
-            ),
-            ReviewColumn(
-              customerName: 'David Mark',
-              customerImage: AssetImage('assets/images/profile2.png'),
-            ),
-          ],
+              ReviewColumn(
+                customerName: 'Jenny Wilson',
+                customerImage: AssetImage('assets/images/profile1.png'),
+              ),
+              ReviewColumn(
+                customerName: 'Richard Ronalds',
+                customerImage: AssetImage('assets/images/profile2.png'),
+              ),
+              ReviewColumn(
+                customerName: 'Michael Jordan',
+                customerImage: AssetImage('assets/images/profile3.png'),
+              ),
+              ReviewColumn(
+                customerName: 'Samson Greg',
+                customerImage: AssetImage('assets/images/profile4.png'),
+              ),
+              ReviewColumn(
+                customerName: 'David Mark',
+                customerImage: AssetImage('assets/images/profile2.png'),
+              ),
+            ],
+          ),
         ),
       ),
     );

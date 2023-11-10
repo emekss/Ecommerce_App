@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:sample_project/components/bottom_navbar_button.dart';
 import 'package:sample_project/components/custom_widget.dart';
 
 class GetStartedPage extends StatelessWidget {
@@ -9,11 +10,12 @@ class GetStartedPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        elevation: 0,
         backgroundColor: Colors.white,
         leading: IconButton(
           onPressed: () {},
           icon: const Icon(
-            Icons.arrow_back,
+            Icons.arrow_back_ios_new_rounded,
             color: Colors.black,
           ),
         ),
@@ -62,8 +64,8 @@ class GetStartedPage extends StatelessWidget {
             },
             child: RichText(
               text: const TextSpan(
-                text: 'Already have an Account?',
-                style: TextStyle(fontSize: 14, color: Colors.black),
+                text: 'Already have an Account? ',
+                style: TextStyle(fontSize: 16, color: Colors.black),
                 children: <TextSpan>[
                   TextSpan(
                     text: 'Sign In',
@@ -75,23 +77,10 @@ class GetStartedPage extends StatelessWidget {
               ),
             ),
           ),
-          const SizedBox(height: 5),
-          Container(
-            width: MediaQuery.of(context).size.width,
-            height: 75,
-            color: const Color(0xff9775fa),
-            child: const Text(
-              'Create an Account',
-              style: TextStyle(
-                color: Colors.white,
-                fontSize: 20,
-                fontWeight: FontWeight.bold,
-              ),
-              textAlign: TextAlign.center,
-            ),
-          ),
         ])
       ]),
+      bottomNavigationBar:
+          const BottomNavbarButton(buttonLabel: 'Create an Account'),
     );
   }
 }
