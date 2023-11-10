@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_switch/flutter_switch.dart';
+import 'package:sample_project/components/bottom_navbar_button.dart';
 
 import '../components/custom_widget.dart';
 
@@ -17,26 +18,35 @@ class _WelcomePageState extends State<WelcomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        elevation: 0,
         backgroundColor: Colors.white,
         leading: IconButton(
           onPressed: () {},
           icon: const Icon(
-            Icons.arrow_back,
+            Icons.arrow_back_ios_new_rounded,
             color: Colors.black,
           ),
         ),
       ),
       body:
           Column(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
-        const Padding(
-          padding: EdgeInsets.all(8.0),
-          child: Text(
-            'Welcome',
-            style: TextStyle(
-              fontWeight: FontWeight.bold,
-              fontSize: 30,
-            ),
-            textAlign: TextAlign.center,
+        Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: Column(
+            children: [
+              const Text(
+                'Welcome to Laza Store...',
+                style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                  fontSize: 30,
+                ),
+                textAlign: TextAlign.center,
+              ),
+              Image.asset(
+                'assets/images/logo.png',
+                color: const Color(0xff9775fa),
+              )
+            ],
           ),
         ),
         Padding(
@@ -85,44 +95,18 @@ class _WelcomePageState extends State<WelcomePage> {
             ],
           ),
         ),
-        Column(children: [
-          RichText(
-            textAlign: TextAlign.center,
-            text: const TextSpan(
-              text:
-                  'By connecting your account confirm that you agree \n with our ',
-              style: TextStyle(fontSize: 14, color: Colors.black),
-              children: <TextSpan>[
-                TextSpan(
-                  text: 'Terms and Conditions',
-                  style: TextStyle(
-                    fontWeight: FontWeight.bold,
-                  ),
-                )
-              ],
+        const Row(
+          children: [
+            Text(
+                'By connecting your account confirm that you agree \n with our'),
+            Text(
+              'Terms and Conditions',
+              style: TextStyle(fontWeight: FontWeight.bold),
             ),
-          ),
-          GestureDetector(
-            onTap: () {
-              Navigator.pushNamed(context, 'cartHomePage');
-            },
-            child: Container(
-              width: MediaQuery.of(context).size.width,
-              height: 75,
-              color: const Color(0xff9775fa),
-              child: const Text(
-                'Sign In',
-                style: TextStyle(
-                  color: Colors.white,
-                  fontSize: 20,
-                  fontWeight: FontWeight.bold,
-                ),
-                textAlign: TextAlign.center,
-              ),
-            ),
-          ),
-        ]),
+          ],
+        )
       ]),
+      bottomNavigationBar: const BottomNavbarButton(buttonLabel: 'Sign in'),
     );
   }
 }
