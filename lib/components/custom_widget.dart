@@ -40,10 +40,11 @@ Widget customButton({
 Widget customTextField({
   required String title,
 }) {
-  return TextFormField(
+  return TextField(
+    obscureText: true,
     decoration: InputDecoration(
-      border: const UnderlineInputBorder(),
-      labelText: title,
+      border: OutlineInputBorder(borderRadius: BorderRadius.circular(12)),
+      hintText: title,
     ),
   );
 }

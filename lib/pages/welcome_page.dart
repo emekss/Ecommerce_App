@@ -34,17 +34,21 @@ class _WelcomePageState extends State<WelcomePage> {
           padding: const EdgeInsets.all(8.0),
           child: Column(
             children: [
+              Image.asset(
+                'assets/images/logo.png',
+                color: const Color(0xff9775fa),
+                height: 80,
+              ),
               const Text(
-                'Welcome to Laza Store...',
+                'Welcome',
                 style: TextStyle(
                   fontWeight: FontWeight.bold,
                   fontSize: 30,
                 ),
-                textAlign: TextAlign.center,
               ),
-              Image.asset(
-                'assets/images/logo.png',
-                color: const Color(0xff9775fa),
+              const Text(
+                'please enter you details to continue',
+                style: TextStyle(color: Colors.grey),
               )
             ],
           ),
@@ -95,14 +99,24 @@ class _WelcomePageState extends State<WelcomePage> {
             ],
           ),
         ),
-        const Row(
+        Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text(
-                'By connecting your account confirm that you agree \n with our'),
-            Text(
-              'Terms and Conditions',
-              style: TextStyle(fontWeight: FontWeight.bold),
-            ),
+            RichText(
+              textAlign: TextAlign.center,
+              text: const TextSpan(
+                text:
+                    'By connecting your account confirm that you agree \n with our ',
+                style: TextStyle(color: Colors.black),
+                children: [
+                  TextSpan(
+                    text: 'Terms and Conditions',
+                    style: TextStyle(
+                        fontWeight: FontWeight.bold, color: Colors.black),
+                  )
+                ],
+              ),
+            )
           ],
         )
       ]),
