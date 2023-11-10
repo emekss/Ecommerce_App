@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:sample_project/components/bottom_navbar_button.dart';
 
 import 'package:sample_project/components/custom_widget.dart';
+import 'package:sample_project/components/review_column.dart';
 
 class DetailsPage extends StatefulWidget {
   const DetailsPage({super.key});
@@ -28,7 +30,7 @@ class _DetailsPageState extends State<DetailsPage> {
           leading: IconButton(
             onPressed: () {},
             icon: const Icon(
-              Icons.arrow_back_outlined,
+              Icons.arrow_back_ios_new_rounded,
               color: Colors.black,
             ),
           ),
@@ -74,7 +76,7 @@ class _DetailsPageState extends State<DetailsPage> {
                         ),
                       ),
                       Text(
-                        '£120',
+                        '\$125',
                         style: TextStyle(
                           fontSize: 24,
                           fontWeight: FontWeight.bold,
@@ -156,7 +158,7 @@ class _DetailsPageState extends State<DetailsPage> {
 
             // Size Row
             SizedBox(
-              height: 89,
+              height: 75,
               child: GridView.builder(
                   itemCount: size.length,
                   gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
@@ -182,9 +184,58 @@ class _DetailsPageState extends State<DetailsPage> {
                   'The Nike Throwback Pullover Hoodie is made from premium French terry fabric that blends a performance feel with Read More..',
                 )
               ],
-            )
+            ),
+            const SizedBox(height: 10),
+            Column(
+              children: [
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    const Text(
+                      'Reviews',
+                      style:
+                          TextStyle(fontSize: 19, fontWeight: FontWeight.bold),
+                    ),
+                    GestureDetector(
+                        onTap: () {
+                          Navigator.pushNamed(context, 'reviewPage');
+                        },
+                        child: const Text('View All')),
+                  ],
+                ),
+                const ReviewColumn(
+                  customerName: 'Jonathan James',
+                  customerImage: AssetImage('assets/images/profile3.png'),
+                )
+              ],
+            ),
+            const SizedBox(height: 10),
+            const Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Column(
+                  children: [
+                    Text(
+                      'Total Price',
+                      style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        fontSize: 17,
+                      ),
+                    ),
+                    Text('with VAT,SD')
+                  ],
+                ),
+                Text(
+                  '\$125',
+                  style: TextStyle(fontSize: 19, fontWeight: FontWeight.bold),
+                )
+              ],
+            ),
           ],
         ),
+      ),
+      bottomNavigationBar: const BottomNavbarButton(
+        buttonLabel: 'Add to Cart',
       ),
     );
   }

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:sample_project/pages/add_review_page.dart';
 import 'package:sample_project/pages/cart_home_page.dart';
 
 import 'package:sample_project/pages/details_page.dart';
@@ -17,13 +18,15 @@ class SampleProject extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: const ReviewPage(),
+      home: const DetailsPage(),
       routes: {
         'getStartedPage': (context) => const GetStartedPage(),
         'signUpPage': (context) => const SignUpPage(),
         'welcomePage': (context) => const WelcomePage(),
         'cartHomePage': (context) => const CartHomePage(),
         'detailsPage': (context) => const DetailsPage(),
+        'addReviewPage': (context) => const AddReviewPage(),
+        'reviewPage': (context) => const ReviewPage(),
       },
     );
   }

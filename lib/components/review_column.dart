@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 
 class ReviewColumn extends StatefulWidget {
-  final String profileName;
-  final Image profileImage;
+  final String customerName;
+  final AssetImage customerImage;
   const ReviewColumn(
-      {super.key, required this.profileImage, required this.profileName});
+      {super.key, required this.customerName, required this.customerImage});
 
   @override
   State<ReviewColumn> createState() => _ReviewColumnState();
@@ -17,26 +17,27 @@ class _ReviewColumnState extends State<ReviewColumn> {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.all(15),
+      padding: const EdgeInsets.all(8.0),
       child: Column(
         children: [
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              const Row(
+              Row(
                 children: [
                   CircleAvatar(
                     radius: 20,
-                    backgroundImage: AssetImage('assets/images/profile1.png'),
+                    backgroundImage: (widget.customerImage),
                   ),
+                  const SizedBox(height: 10),
                   Column(
                     children: [
                       Text(
-                        'Jenny Wilson',
-                        style: TextStyle(
+                        widget.customerName,
+                        style: const TextStyle(
                             fontWeight: FontWeight.bold, fontSize: 17),
                       ),
-                      Row(
+                      const Row(
                         children: [
                           Icon(
                             Icons.access_time_rounded,

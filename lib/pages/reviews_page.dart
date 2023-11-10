@@ -15,6 +15,14 @@ class _ReviewPageState extends State<ReviewPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        leading: IconButton(
+            onPressed: () {
+              Navigator.pushNamed(context, 'detailsPage');
+            },
+            icon: const Icon(
+              Icons.arrow_back_ios_new_rounded,
+              color: Colors.black,
+            )),
         elevation: 0,
         backgroundColor: Colors.white,
         title: const Text(
@@ -22,11 +30,11 @@ class _ReviewPageState extends State<ReviewPage> {
           style: TextStyle(color: Colors.black),
         ),
       ),
-      body: SingleChildScrollView(
+      body: const SingleChildScrollView(
         child: Column(
           children: [
-            const Padding(
-              padding: EdgeInsets.all(10.0),
+            Padding(
+              padding: EdgeInsets.symmetric(horizontal: 15),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
@@ -46,28 +54,24 @@ class _ReviewPageState extends State<ReviewPage> {
               ),
             ),
             ReviewColumn(
-              name: 'Jenny Wilson',
-              image: Image.asset('assets/images/profile1.png'),
+              customerName: 'Jenny Wilson',
+              customerImage: AssetImage('assets/images/profile1.png'),
             ),
             ReviewColumn(
-              image: Image.asset('assets/images/profile2.png'),
-              name: 'Ronald Richards',
+              customerName: 'Richard Ronalds',
+              customerImage: AssetImage('assets/images/profile2.png'),
             ),
             ReviewColumn(
-              image: Image.asset('assets/images/profile3.png'),
-              name: 'David Bigfoot',
+              customerName: 'Michael Jordan',
+              customerImage: AssetImage('assets/images/profile3.png'),
             ),
             ReviewColumn(
-              image: Image.asset('assets/images/profile4.png'),
-              name: 'Justin Timberlake',
+              customerName: 'Samson Greg',
+              customerImage: AssetImage('assets/images/profile4.png'),
             ),
             ReviewColumn(
-              image: Image.asset('assets/images/profile2.png'),
-              name: 'James Collins',
-            ),
-            ReviewColumn(
-              image: Image.asset('assets/images/profile3.png'),
-              name: 'James Darwin',
+              customerName: 'David Mark',
+              customerImage: AssetImage('assets/images/profile2.png'),
             ),
           ],
         ),
