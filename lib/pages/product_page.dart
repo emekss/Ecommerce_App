@@ -30,7 +30,7 @@ class _ProductPageState extends State<ProductPage> {
             ]),
         drawer: const Drawer(child: DrawerColumn()),
         body: Padding(
-          padding: const EdgeInsets.all(16.0),
+          padding: const EdgeInsets.all(18.0),
           child:
               Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
             const Text(
@@ -42,13 +42,14 @@ class _ProductPageState extends State<ProductPage> {
             ),
             const SizedBox(height: 5),
             const Text(
-              'Welcome to PKC Shop.',
-              style: TextStyle(fontSize: 17),
+              'Welcome to Laza.',
+              style: TextStyle(fontSize: 17, color: Colors.grey),
             ),
-            const SizedBox(height: 20),
+            const SizedBox(height: 25),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
+                // search bar
                 const SizedBox(
                   width: 330,
                   child: TextField(
@@ -63,6 +64,8 @@ class _ProductPageState extends State<ProductPage> {
                     ),
                   ),
                 ),
+
+                //microphone
                 Container(
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(12),
@@ -81,7 +84,7 @@ class _ProductPageState extends State<ProductPage> {
                 )
               ],
             ),
-            const SizedBox(height: 10),
+            const SizedBox(height: 25),
             const Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
@@ -99,6 +102,7 @@ class _ProductPageState extends State<ProductPage> {
                     ),
                   )
                 ]),
+            const SizedBox(height: 15),
             Container(
               height: 60,
               child: ListView(scrollDirection: Axis.horizontal, children: [
@@ -124,6 +128,7 @@ class _ProductPageState extends State<ProductPage> {
                 ),
               ]),
             ),
+            const SizedBox(height: 15),
             const Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
@@ -141,6 +146,7 @@ class _ProductPageState extends State<ProductPage> {
                     ),
                   )
                 ]),
+            const SizedBox(height: 15),
             Expanded(
               child: GridView.builder(
                   itemCount: products.length,
@@ -150,6 +156,8 @@ class _ProductPageState extends State<ProductPage> {
                     final product = products[index];
                     return ProductCard(
                       image: product['imageUrl'] as String,
+                      title: product['title'] as String,
+                      prices: product['prices'] as String,
                     );
                   })),
             )

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:sample_project/pages/add_address_page.dart';
 import 'package:sample_project/pages/add_review_page.dart';
 import 'package:sample_project/pages/product_page.dart';
 
@@ -19,7 +20,7 @@ class SampleProject extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: const ProductPage(),
+      home: const AddReviewPage(),
       routes: {
         'createAcountPage': (context) => const CreateAccountPage(),
         'signUpPage': (context) => const SignUpPage(),
