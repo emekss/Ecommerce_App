@@ -30,7 +30,7 @@ class _AddReviewPageState extends State<AddReviewPage> {
         ),
       ),
       body: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 18),
+        padding: const EdgeInsets.all(18),
         child: Column(
           children: [
             //Name column
