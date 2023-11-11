@@ -4,14 +4,14 @@ import 'package:sample_project/components/bottom_navbar_button.dart';
 
 import '../components/custom_widget.dart';
 
-class WelcomePage extends StatefulWidget {
-  const WelcomePage({super.key});
+class SignInPage extends StatefulWidget {
+  const SignInPage({super.key});
 
   @override
-  State<WelcomePage> createState() => _WelcomePageState();
+  State<SignInPage> createState() => _SignInPageState();
 }
 
-class _WelcomePageState extends State<WelcomePage> {
+class _SignInPageState extends State<SignInPage> {
   bool status = false;
 
   @override
@@ -120,7 +120,11 @@ class _WelcomePageState extends State<WelcomePage> {
           ],
         )
       ]),
-      bottomNavigationBar: const BottomNavbarButton(buttonLabel: 'Sign in'),
+      bottomNavigationBar: GestureDetector(
+          onTap: () {
+            Navigator.pushNamed(context, 'productPage');
+          },
+          child: const BottomNavbarButton(buttonLabel: 'Sign in')),
     );
   }
 }

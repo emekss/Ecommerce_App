@@ -3,8 +3,8 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:sample_project/components/bottom_navbar_button.dart';
 import 'package:sample_project/components/custom_widget.dart';
 
-class GetStartedPage extends StatelessWidget {
-  const GetStartedPage({super.key});
+class CreateAccountPage extends StatelessWidget {
+  const CreateAccountPage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -79,8 +79,11 @@ class GetStartedPage extends StatelessWidget {
           ),
         ])
       ]),
-      bottomNavigationBar:
-          const BottomNavbarButton(buttonLabel: 'Create an Account'),
+      bottomNavigationBar: GestureDetector(
+          onTap: () {
+            Navigator.pushNamed(context, 'signUpPage');
+          },
+          child: const BottomNavbarButton(buttonLabel: 'Create an Account')),
     );
   }
 }

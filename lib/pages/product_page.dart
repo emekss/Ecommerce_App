@@ -4,14 +4,14 @@ import 'package:sample_project/components/drawer_column.dart';
 import 'package:sample_project/util/global_variables.dart';
 import 'package:sample_project/components/product_card.dart';
 
-class CartHomePage extends StatefulWidget {
-  const CartHomePage({super.key});
+class ProductPage extends StatefulWidget {
+  const ProductPage({super.key});
 
   @override
-  State<CartHomePage> createState() => _CartHomePageState();
+  State<ProductPage> createState() => _ProductPageState();
 }
 
-class _CartHomePageState extends State<CartHomePage> {
+class _ProductPageState extends State<ProductPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(

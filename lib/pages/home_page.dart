@@ -6,26 +6,28 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.purple[300],
       body: Stack(children: [
         Container(
           decoration: const BoxDecoration(
             image: DecorationImage(
               image: AssetImage(
-                'assets/images/brasil.webp',
+                'assets/images/wallpaper.png',
               ),
               fit: BoxFit.cover,
             ),
           ),
         ),
-        Align(
-          alignment: Alignment.bottomCenter,
+        Padding(
+          padding: const EdgeInsets.only(top: 650, left: 23),
           child: Container(
             decoration: const BoxDecoration(
               borderRadius: BorderRadius.all(Radius.circular(40)),
               color: Colors.white,
             ),
-            padding: const EdgeInsets.all(16),
-            height: 250,
+            padding: const EdgeInsets.all(20),
+            height: 244,
+            width: 380,
             child: Column(children: [
               const Text(
                 'Look Good,Feel Good',
@@ -34,24 +36,24 @@ class HomePage extends StatelessWidget {
                   fontSize: 25,
                 ),
               ),
-              const SizedBox(height: 5),
+              const SizedBox(height: 10),
               const Text(
                 'Create your Individual and unique style and look amazing everyday.',
                 textAlign: TextAlign.center,
                 style: TextStyle(
-                  fontSize: 18,
+                  fontSize: 16,
                 ),
               ),
-              const SizedBox(height: 10),
+              const SizedBox(height: 15),
               Row(mainAxisAlignment: MainAxisAlignment.spaceEvenly, children: [
                 GestureDetector(
                   onTap: () {
-                    Navigator.pushNamed(context, 'getStartedPage');
+                    Navigator.pushNamed(context, 'createAccountPage');
                   },
                   child: Card(
                     child: Container(
-                      decoration: BoxDecoration(color: const Color(0xF5F6FA)),
-                      height: 60,
+                      decoration: const BoxDecoration(color: Color(0x00f5f6fa)),
+                      height: 50,
                       width: 152,
                       child: const Center(
                           child: Text(
@@ -63,8 +65,8 @@ class HomePage extends StatelessWidget {
                 ),
                 Card(
                   child: Container(
-                    decoration: BoxDecoration(color: const Color(0xF5F6FA)),
-                    height: 60,
+                    decoration: BoxDecoration(color: Colors.purple[300]),
+                    height: 50,
                     width: 152,
                     child: const Center(
                         child: Text(

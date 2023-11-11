@@ -38,6 +38,7 @@ class _SignUpPageState extends State<SignUpPage> {
             ),
           ),
         ),
+        const Text('New member? Create an account!'),
         const SizedBox(height: 150),
         Padding(
           padding: const EdgeInsets.all(16.0),
@@ -78,7 +79,7 @@ class _SignUpPageState extends State<SignUpPage> {
       ]),
       bottomNavigationBar: GestureDetector(
           onTap: () {
-            Navigator.pushNamed(context, 'welcomePage');
+            Navigator.pushNamed(context, 'signInPage');
           },
           child: const BottomNavbarButton(buttonLabel: 'Sign Up')),
     );
