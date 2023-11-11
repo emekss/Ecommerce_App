@@ -1,18 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_switch/flutter_switch.dart';
-import 'package:sample_project/components/add_card_button.dart';
 import 'package:sample_project/components/bottom_navbar_button.dart';
 import 'package:sample_project/components/custom_address_textfield.dart';
 
-class PaymentPage extends StatefulWidget {
-  const PaymentPage({super.key});
+class AddNewCardPage extends StatelessWidget {
+  const AddNewCardPage({super.key});
 
-  @override
-  State<PaymentPage> createState() => _PaymentPageState();
-}
-
-class _PaymentPageState extends State<PaymentPage> {
-  bool status = false;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -23,31 +15,25 @@ class _PaymentPageState extends State<PaymentPage> {
               Icons.arrow_back_ios_new_rounded,
               color: Colors.black,
             )),
-        backgroundColor: Colors.white,
         elevation: 0,
-        title: const Text('Payment', style: TextStyle(color: Colors.black)),
+        backgroundColor: Colors.white,
+        title: const Text(
+          'Add New Card',
+          style: TextStyle(color: Colors.black),
+        ),
       ),
       body: Padding(
         padding: const EdgeInsets.all(15.0),
-
-        // ATM CARD ROW
         child: Column(
           children: [
-            SingleChildScrollView(
-              scrollDirection: Axis.horizontal,
-              child: Row(
-                children: [
-                  Image.asset('assets/images/card.png'),
-                  const SizedBox(width: 20),
-                  Image.asset('assets/images/card2.png'),
-                ],
-              ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                Image.asset('assets/images/matercard.png'),
+                Image.asset('assets/images/paypal.png'),
+                Image.asset('assets/images/boa.png'),
+              ],
             ),
-            const SizedBox(height: 20),
-
-            //ADD NEW CARD BUTTON
-            const AddCardButton(),
-
             const SizedBox(height: 20),
 
             //CARD OWNER TEXTFIELD
@@ -121,40 +107,10 @@ class _PaymentPageState extends State<PaymentPage> {
                 ),
               ],
             ),
-
-            const SizedBox(height: 20),
-
-            //Save card info row
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                const Text(
-                  'Save card info',
-                  style: TextStyle(fontSize: 19, fontWeight: FontWeight.bold),
-                ),
-
-                //swith
-                FlutterSwitch(
-                    activeColor: Colors.green,
-                    width: 55.0,
-                    height: 30.0,
-                    valueFontSize: 15.0,
-                    toggleSize: 20.0,
-                    value: status,
-                    borderRadius: 30.0,
-                    padding: 8.0,
-                    showOnOff: false,
-                    onToggle: (val) {
-                      setState(() {
-                        status = val;
-                      });
-                    })
-              ],
-            )
           ],
         ),
       ),
-      bottomNavigationBar: const BottomNavbarButton(buttonLabel: 'Save Card'),
+      bottomNavigationBar: const BottomNavbarButton(buttonLabel: 'Add Card'),
     );
   }
 }

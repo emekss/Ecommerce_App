@@ -32,7 +32,7 @@ class _ReviewPageState extends State<ReviewPage> {
       ),
       body: const SingleChildScrollView(
         child: Padding(
-          padding: EdgeInsets.all(10.0),
+          padding: EdgeInsets.all(15.0),
           child: Column(
             children: [
               Padding(
