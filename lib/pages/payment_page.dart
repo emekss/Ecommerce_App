@@ -1,51 +1,69 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_switch/flutter_switch.dart';
+import 'package:sample_project/components/add_card_button.dart';
 import 'package:sample_project/components/bottom_navbar_button.dart';
 import 'package:sample_project/components/custom_address_textfield.dart';
 
-class AddAddressPage extends StatefulWidget {
-  const AddAddressPage({super.key});
+class PaymentPage extends StatefulWidget {
+  const PaymentPage({super.key});
 
   @override
-  State<AddAddressPage> createState() => _AddAddressPageState();
+  State<PaymentPage> createState() => _PaymentPageState();
 }
 
-class _AddAddressPageState extends State<AddAddressPage> {
+class _PaymentPageState extends State<PaymentPage> {
   bool status = false;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        elevation: 0,
-        leading: IconButton(
-            onPressed: () {},
-            icon: const Icon(
-              Icons.arrow_back_ios_new_rounded,
-              color: Colors.black,
-            )),
         backgroundColor: Colors.white,
-        title: const Text(
-          'Address',
-          style: TextStyle(fontWeight: FontWeight.bold, color: Colors.black),
-        ),
+        elevation: 0,
+        title: const Text('Payment', style: TextStyle(color: Colors.black)),
       ),
       body: Padding(
         padding: const EdgeInsets.all(18.0),
+
+        // ATM CARD ROW
         child: Column(
           children: [
-            //Name Textfield
-            const CustomAddressTextField(
-                hintText: 'Type your Name', name: 'Name'),
+            SingleChildScrollView(
+              scrollDirection: Axis.horizontal,
+              child: Row(
+                children: [
+                  Image.asset('assets/images/card.png'),
+                  const SizedBox(width: 20),
+                  Image.asset('assets/images/card2.png'),
+                ],
+              ),
+            ),
             const SizedBox(height: 20),
-            // Country and City Colum
+
+            //ADD NEW CARD BUTTON
+            const AddCardButton(),
+
+            const SizedBox(width: 20),
+
+            //CARD OWNER TEXTFIELD
+            const CustomAddressTextField(hintText: 'Name', name: 'Card Owner'),
+
+            const SizedBox(width: 20),
+
+            //CARD NUMBER TEXTFIELD
+            const CustomAddressTextField(
+                hintText: '5254 7634 8734 7690', name: 'Card Number'),
+
+            const SizedBox(width: 20),
+
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
+                // EXPIRY DATE TEXTFIELD
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     const Text(
-                      'Country',
+                      'EXP',
                       style:
                           TextStyle(fontSize: 19, fontWeight: FontWeight.bold),
                     ),
@@ -56,11 +74,9 @@ class _AddAddressPageState extends State<AddAddressPage> {
                         borderRadius: BorderRadius.circular(10),
                         color: Colors.grey[200],
                       ),
-
-                      // Country Textfield
                       child: TextField(
                         decoration: InputDecoration(
-                          hintText: 'Enter Country',
+                          hintText: '2773',
                           border: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(10),
                           ),
@@ -69,11 +85,13 @@ class _AddAddressPageState extends State<AddAddressPage> {
                     ),
                   ],
                 ),
+
+                //CVV TEXTFIELD
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     const Text(
-                      'City',
+                      'CVV',
                       style:
                           TextStyle(fontSize: 19, fontWeight: FontWeight.bold),
                     ),
@@ -84,8 +102,6 @@ class _AddAddressPageState extends State<AddAddressPage> {
                         borderRadius: BorderRadius.circular(10),
                         color: Colors.grey[200],
                       ),
-
-                      // Country Textfield
                       child: TextField(
                         decoration: InputDecoration(
                           hintText: 'Enter City',
@@ -99,25 +115,15 @@ class _AddAddressPageState extends State<AddAddressPage> {
                 ),
               ],
             ),
-            const SizedBox(height: 20),
 
-            //Phone Number Textfield
-            const CustomAddressTextField(
-                hintText: '+234 90 1234 5678', name: 'Phone Number'),
-            const SizedBox(height: 20),
+            const SizedBox(width: 20),
 
-            //Address Textfield
-            const CustomAddressTextField(
-                hintText: 'Abuja, Nigeria, 12A', name: 'Address'),
-
-            const SizedBox(height: 20),
-
-            //Save Primary Address
+            //Save card info row
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 const Text(
-                  'Save as primary address',
+                  'Save card info',
                   style: TextStyle(fontSize: 19, fontWeight: FontWeight.bold),
                 ),
 
@@ -142,8 +148,7 @@ class _AddAddressPageState extends State<AddAddressPage> {
           ],
         ),
       ),
-      bottomNavigationBar:
-          const BottomNavbarButton(buttonLabel: 'Save your Address'),
+      bottomNavigationBar: const BottomNavbarButton(buttonLabel: 'Save Card'),
     );
   }
 }
