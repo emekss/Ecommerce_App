@@ -20,7 +20,7 @@ class SampleProject extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: const AddReviewPage(),
+      home: const AddAddressPage(),
       routes: {
         'createAcountPage': (context) => const CreateAccountPage(),
         'signUpPage': (context) => const SignUpPage(),

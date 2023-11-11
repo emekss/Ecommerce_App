@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:sample_project/components/bottom_navbar_button.dart';
 
 class AddAddressPage extends StatelessWidget {
   const AddAddressPage({super.key});
@@ -8,98 +7,112 @@ class AddAddressPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        elevation: 0,
         leading: IconButton(
             onPressed: () {},
             icon: const Icon(
               Icons.arrow_back_ios_new_rounded,
               color: Colors.black,
             )),
-        elevation: 0,
         backgroundColor: Colors.white,
         title: const Text(
           'Address',
-          style: TextStyle(color: Colors.black),
+          style: TextStyle(fontWeight: FontWeight.bold, color: Colors.black),
         ),
       ),
-      body: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 18),
-        child: Column(
-          children: [
-            //Name column
-            Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                const Text(
-                  'Name',
-                  style: TextStyle(fontSize: 19, fontWeight: FontWeight.bold),
-                ),
-                const SizedBox(height: 10),
-                Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 8),
-                  child: Container(
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(10),
-                      color: Colors.grey[300],
-                    ),
+      body: Column(
+        children: [
+          Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              const Text(
+                'Name',
+                style: TextStyle(fontSize: 19, fontWeight: FontWeight.bold),
+              ),
+              const SizedBox(height: 10),
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 8),
+                child: Container(
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(10),
+                    color: Colors.grey[300],
+                  ),
 
-                    // Name Textfield
-                    child: TextField(
-                      decoration: InputDecoration(
-                        hintText: 'Type your name',
-                        border: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(10),
-                        ),
+                  // Name Textfield
+                  child: TextField(
+                    decoration: InputDecoration(
+                      hintText: 'Type your name',
+                      border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(10),
                       ),
                     ),
                   ),
                 ),
-              ],
-            ),
-            const SizedBox(height: 20),
-
-            Row(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                const Text(
-                  'Country',
-                  style: TextStyle(fontSize: 19, fontWeight: FontWeight.bold),
-                ),
-                const SizedBox(height: 10),
-                Padding(
-                  padding: const EdgeInsets.symmetric(
-                    horizontal: 8,
+              ),
+            ],
+          ),
+          // Country and City Colum
+          Column(
+            children: [
+              Row(
+                children: [
+                  const Text(
+                    'Country',
+                    style: TextStyle(fontSize: 19, fontWeight: FontWeight.bold),
                   ),
-                  child: Container(
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(10),
-                      color: Colors.grey[300],
-                    ),
+                  Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 90),
+                    child: Container(
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(10),
+                        color: Colors.grey[300],
+                      ),
 
-                    // experience textfield
-
-                    child: TextField(
-                      decoration: InputDecoration(
-                        contentPadding:
-                            const EdgeInsets.symmetric(horizontal: 30),
-                        hintText: ' Describe your Experience',
-                        border: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(10),
+                      // Country Textfield
+                      child: TextField(
+                        decoration: InputDecoration(
+                          hintText: 'Type your Country',
+                          border: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(10),
+                          ),
                         ),
                       ),
                     ),
                   ),
-                ),
-              ],
-            ),
+                  Column(
+                    children: [
+                      const Text(
+                        'Country',
+                        style: TextStyle(
+                            fontSize: 19, fontWeight: FontWeight.bold),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 80),
+                        child: Container(
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(10),
+                            color: Colors.grey[300],
+                          ),
 
-            const SizedBox(height: 20),
-
-            // Rating Column
-          ],
-        ),
+                          // Country Textfield
+                          child: TextField(
+                            decoration: InputDecoration(
+                              hintText: 'Type your Country',
+                              border: OutlineInputBorder(
+                                borderRadius: BorderRadius.circular(10),
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ],
+              ),
+            ],
+          )
+        ],
       ),
-      bottomNavigationBar:
-          const BottomNavbarButton(buttonLabel: 'Save Address'),
     );
   }
 }
