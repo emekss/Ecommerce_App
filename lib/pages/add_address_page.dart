@@ -1,8 +1,16 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_switch/flutter_switch.dart';
+import 'package:sample_project/components/custom_address_textfield.dart';
 
-class AddAddressPage extends StatelessWidget {
+class AddAddressPage extends StatefulWidget {
   const AddAddressPage({super.key});
 
+  @override
+  State<AddAddressPage> createState() => _AddAddressPageState();
+}
+
+class _AddAddressPageState extends State<AddAddressPage> {
+  bool status = false;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -22,93 +30,96 @@ class AddAddressPage extends StatelessWidget {
       ),
       body: Column(
         children: [
-          Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              const Text(
-                'Name',
-                style: TextStyle(fontSize: 19, fontWeight: FontWeight.bold),
-              ),
-              const SizedBox(height: 10),
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 8),
-                child: Container(
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(10),
-                    color: Colors.grey[300],
-                  ),
-
-                  // Name Textfield
-                  child: TextField(
-                    decoration: InputDecoration(
-                      hintText: 'Type your name',
-                      border: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(10),
-                      ),
-                    ),
-                  ),
-                ),
-              ),
-            ],
-          ),
+          const CustomAddressTextField(
+              hintText: 'Type your Name', name: 'Name'),
+          const SizedBox(height: 20),
           // Country and City Colum
-          Column(
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Row(
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   const Text(
                     'Country',
                     style: TextStyle(fontSize: 19, fontWeight: FontWeight.bold),
                   ),
-                  Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 90),
-                    child: Container(
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(10),
-                        color: Colors.grey[300],
-                      ),
+                  const SizedBox(height: 15),
+                  Container(
+                    width: 170,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(10),
+                      color: Colors.grey[300],
+                    ),
 
-                      // Country Textfield
-                      child: TextField(
-                        decoration: InputDecoration(
-                          hintText: 'Type your Country',
-                          border: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(10),
-                          ),
+                    // Country Textfield
+                    child: TextField(
+                      decoration: InputDecoration(
+                        hintText: 'Enter Country',
+                        border: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(10),
                         ),
                       ),
                     ),
                   ),
-                  Column(
-                    children: [
-                      const Text(
-                        'Country',
-                        style: TextStyle(
-                            fontSize: 19, fontWeight: FontWeight.bold),
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.symmetric(horizontal: 80),
-                        child: Container(
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(10),
-                            color: Colors.grey[300],
-                          ),
+                ],
+              ),
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  const Text(
+                    'City',
+                    style: TextStyle(fontSize: 19, fontWeight: FontWeight.bold),
+                  ),
+                  const SizedBox(height: 15),
+                  Container(
+                    width: 170,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(10),
+                      color: Colors.grey[300],
+                    ),
 
-                          // Country Textfield
-                          child: TextField(
-                            decoration: InputDecoration(
-                              hintText: 'Type your Country',
-                              border: OutlineInputBorder(
-                                borderRadius: BorderRadius.circular(10),
-                              ),
-                            ),
-                          ),
+                    // Country Textfield
+                    child: TextField(
+                      decoration: InputDecoration(
+                        hintText: 'Enter City',
+                        border: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(10),
                         ),
                       ),
-                    ],
+                    ),
                   ),
                 ],
               ),
+            ],
+          ),
+          const SizedBox(height: 20),
+          const CustomAddressTextField(
+              hintText: '+234 90 1234 5678', name: 'Phone Number'),
+          const SizedBox(height: 20),
+          const CustomAddressTextField(
+              hintText: 'Abuja, Nigeria, 12A', name: 'Address'),
+
+          const SizedBox(height: 20),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              const Text('Save as primary address'),
+              FlutterSwitch(
+                  activeColor: Colors.green,
+                  width: 55.0,
+                  height: 30.0,
+                  valueFontSize: 15.0,
+                  toggleSize: 20.0,
+                  value: status,
+                  borderRadius: 30.0,
+                  padding: 8.0,
+                  showOnOff: false,
+                  onToggle: (val) {
+                    setState(() {
+                      status = val;
+                    });
+                  })
             ],
           )
         ],
