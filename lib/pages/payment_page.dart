@@ -110,7 +110,7 @@ class _PaymentPageState extends State<PaymentPage> {
                       ),
                       child: TextField(
                         decoration: InputDecoration(
-                          hintText: 'Enter City',
+                          hintText: '677',
                           border: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(10),
                           ),

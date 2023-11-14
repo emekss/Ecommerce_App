@@ -1,3 +1,4 @@
+// products for sale
 final products = [
   {
     'id': '0',
@@ -56,3 +57,13 @@ final products = [
     'imageUrl': 'assets/images/product4.png',
   },
 ];
+
+// user cart
+
+// get product list
+
+//get user cart
+
+//add item to cart
+
+//remove item from cart

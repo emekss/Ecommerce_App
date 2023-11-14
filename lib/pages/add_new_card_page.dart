@@ -96,7 +96,7 @@ class AddNewCardPage extends StatelessWidget {
                       ),
                       child: TextField(
                         decoration: InputDecoration(
-                          hintText: 'Enter City',
+                          hintText: '677',
                           border: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(10),
                           ),
