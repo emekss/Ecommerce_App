@@ -1,18 +1,12 @@
 // ignore_for_file: unnecessary_string_interpolations
 
 import 'package:flutter/material.dart';
+import 'package:sample_project/models/product.dart';
 
-class ProductCard extends StatelessWidget {
-  final String title;
-  final String prices;
-  final String image;
+class ProductTile extends StatelessWidget {
+  final Product product;
 
-  const ProductCard({
-    super.key,
-    required this.prices,
-    required this.title,
-    required this.image,
-  });
+  const ProductTile({super.key, required this.product});
 
   @override
   Widget build(BuildContext context) {
@@ -22,8 +16,9 @@ class ProductCard extends StatelessWidget {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: [
+          //producy image
           Image.asset(
-            image,
+            product.imageUrl,
             height: 160,
             width: 200,
           ),
@@ -31,11 +26,11 @@ class ProductCard extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
-                title,
+                product.title,
                 style: const TextStyle(fontWeight: FontWeight.bold),
               ),
               Text(
-                prices,
+                product.prices.toStringAsFixed(2),
                 style: const TextStyle(fontWeight: FontWeight.bold),
               ),
             ],

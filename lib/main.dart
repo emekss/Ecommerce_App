@@ -1,35 +1,39 @@
 import 'package:flutter/material.dart';
-import 'package:sample_project/pages/add_address_page.dart';
+import 'package:provider/provider.dart';
+import 'package:sample_project/models/shop.dart';
+
 import 'package:sample_project/pages/add_new_card_page.dart';
 import 'package:sample_project/pages/add_review_page.dart';
 import 'package:sample_project/pages/cart_page.dart';
-import 'package:sample_project/pages/order_confirmed_page.dart';
+
 import 'package:sample_project/pages/payment_page.dart';
-import 'package:sample_project/pages/product_page.dart';
+import 'package:sample_project/pages/shop_page.dart';
 
 import 'package:sample_project/pages/details_page.dart';
 import 'package:sample_project/pages/create_account_page.dart';
-import 'package:sample_project/pages/home_page.dart';
+
 import 'package:sample_project/pages/reviews_page.dart';
 
 import 'package:sample_project/pages/sign_up_page.dart';
 import 'package:sample_project/pages/sign_in_page.dart';
 
-void main() => runApp(const SampleProject());
+void main() => runApp(
+      ChangeNotifierProvider(create: (context) => Shop(), child: const MyApp()),
+    );
 
-class SampleProject extends StatelessWidget {
-  const SampleProject({super.key});
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: const PaymentPage(),
+      home: const ShopPage(),
       routes: {
         'createAcountPage': (context) => const CreateAccountPage(),
         'signUpPage': (context) => const SignUpPage(),
         'signInPage': (context) => const SignInPage(),
-        'productPage': (context) => const ProductPage(),
+        'shopPage': (context) => const ShopPage(),
         'detailsPage': (context) => const DetailsPage(),
         'addReviewPage': (context) => const AddReviewPage(),
         'reviewPage': (context) => const ReviewPage(),

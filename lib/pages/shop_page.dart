@@ -1,19 +1,24 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'package:sample_project/components/bottom_navbar.dart';
 import 'package:sample_project/components/drawer_column.dart';
-import 'package:sample_project/util/global_variables.dart';
-import 'package:sample_project/components/product_card.dart';
 
-class ProductPage extends StatefulWidget {
-  const ProductPage({super.key});
+import 'package:sample_project/components/product_tile.dart';
+import 'package:sample_project/models/shop.dart';
+
+class ShopPage extends StatefulWidget {
+  const ShopPage({super.key});
 
   @override
-  State<ProductPage> createState() => _ProductPageState();
+  State<ShopPage> createState() => _ShopPageState();
 }
 
-class _ProductPageState extends State<ProductPage> {
+class _ShopPageState extends State<ShopPage> {
   @override
   Widget build(BuildContext context) {
+    //access products in shop
+    final products = context.watch<Shop>().shop;
+
     return Scaffold(
         appBar: AppBar(
             elevation: 0,
@@ -103,7 +108,7 @@ class _ProductPageState extends State<ProductPage> {
                   )
                 ]),
             const SizedBox(height: 15),
-            Container(
+            SizedBox(
               height: 60,
               child: ListView(scrollDirection: Axis.horizontal, children: [
                 Row(
@@ -154,11 +159,7 @@ class _ProductPageState extends State<ProductPage> {
                       crossAxisCount: 2),
                   itemBuilder: ((context, index) {
                     final product = products[index];
-                    return ProductCard(
-                      image: product['imageUrl'] as String,
-                      title: product['title'] as String,
-                      prices: product['prices'] as String,
-                    );
+                    return ProductTile(product: product);
                   })),
             )
           ]),
