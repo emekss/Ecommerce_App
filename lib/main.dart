@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:sample_project/models/shop.dart';
+import 'package:sample_project/pages/add_address_page.dart';
 
 import 'package:sample_project/pages/add_new_card_page.dart';
 import 'package:sample_project/pages/add_review_page.dart';
@@ -29,7 +30,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: const HomePage(),
+      home: const AddAddressPage(),
       routes: {
         '/createAcountPage': (context) => const CreateAccountPage(),
         '/signUpPage': (context) => const SignUpPage(),
@@ -40,6 +41,7 @@ class MyApp extends StatelessWidget {
         '/reviewPage': (context) => const ReviewPage(),
         '/addNewCardPage': (context) => const AddNewCardPage(),
         '/cartPage': (context) => const CartPage(),
+        '/paymentPage': (context) => const PaymentPage(),
       },
     );
   }

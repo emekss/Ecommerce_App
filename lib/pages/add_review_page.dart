@@ -16,7 +16,7 @@ class _AddReviewPageState extends State<AddReviewPage> {
       appBar: AppBar(
         leading: IconButton(
             onPressed: () {
-              Navigator.pushNamed(context, 'reviewPage');
+              Navigator.pushNamed(context, '/reviewPage');
             },
             icon: const Icon(
               Icons.arrow_back_ios_new_rounded,
@@ -117,8 +117,19 @@ class _AddReviewPageState extends State<AddReviewPage> {
           ],
         ),
       ),
-      bottomNavigationBar:
-          const BottomNavbarButton(buttonLabel: 'Submit your Review'),
+      bottomNavigationBar: GestureDetector(
+          onTap: () {
+            showDialog(
+                context: context,
+                builder: (context) => const AlertDialog(
+                      content: Text(
+                        'Review Submitted Successfully!',
+                        style: TextStyle(
+                            fontSize: 25, fontWeight: FontWeight.bold),
+                      ),
+                    ));
+          },
+          child: const BottomNavbarButton(buttonLabel: 'Submit your Review')),
     );
   }
 }

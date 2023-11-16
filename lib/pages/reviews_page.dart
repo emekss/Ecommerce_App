@@ -17,7 +17,7 @@ class _ReviewPageState extends State<ReviewPage> {
       appBar: AppBar(
         leading: IconButton(
             onPressed: () {
-              Navigator.pushNamed(context, 'detailsPage');
+              Navigator.pushNamed(context, '/detailsPage');
             },
             icon: const Icon(
               Icons.arrow_back_ios_new_rounded,

@@ -81,7 +81,7 @@ class CreateAccountPage extends StatelessWidget {
       ]),
       bottomNavigationBar: GestureDetector(
           onTap: () {
-            Navigator.pushNamed(context, 'signUpPage');
+            Navigator.pushNamed(context, '/signUpPage');
           },
           child: const BottomNavbarButton(buttonLabel: 'Create an Account')),
     );

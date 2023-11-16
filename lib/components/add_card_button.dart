@@ -7,7 +7,7 @@ class AddCardButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        Navigator.pushNamed(context, 'addNewCardPage');
+        Navigator.pushNamed(context, '/addNewCardPage');
       },
       child: Container(
         height: 50,

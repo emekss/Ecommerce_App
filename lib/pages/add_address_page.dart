@@ -142,8 +142,19 @@ class _AddAddressPageState extends State<AddAddressPage> {
           ],
         ),
       ),
-      bottomNavigationBar:
-          const BottomNavbarButton(buttonLabel: 'Save your Address'),
+      bottomNavigationBar: GestureDetector(
+          onTap: () {
+            showDialog(
+                context: context,
+                builder: (context) => const AlertDialog(
+                      content: Text(
+                        'Address Saved Successfully',
+                        style: TextStyle(
+                            fontSize: 25, fontWeight: FontWeight.bold),
+                      ),
+                    ));
+          },
+          child: const BottomNavbarButton(buttonLabel: 'Save your Address')),
     );
   }
 }

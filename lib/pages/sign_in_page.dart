@@ -122,7 +122,7 @@ class _SignInPageState extends State<SignInPage> {
       ]),
       bottomNavigationBar: GestureDetector(
           onTap: () {
-            Navigator.pushNamed(context, 'productPage');
+            Navigator.pushNamed(context, '/shopPage');
           },
           child: const BottomNavbarButton(buttonLabel: 'Sign in')),
     );

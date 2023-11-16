@@ -154,7 +154,19 @@ class _PaymentPageState extends State<PaymentPage> {
           ],
         ),
       ),
-      bottomNavigationBar: const BottomNavbarButton(buttonLabel: 'Save Card'),
+      bottomNavigationBar: GestureDetector(
+          onTap: () {
+            showDialog(
+                context: context,
+                builder: (context) => const AlertDialog(
+                      content: Text(
+                        'Card Saved Successfully',
+                        style: TextStyle(
+                            fontSize: 25, fontWeight: FontWeight.bold),
+                      ),
+                    ));
+          },
+          child: const BottomNavbarButton(buttonLabel: 'Save Card')),
     );
   }
 }

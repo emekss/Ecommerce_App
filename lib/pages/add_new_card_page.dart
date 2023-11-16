@@ -10,7 +10,9 @@ class AddNewCardPage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         leading: IconButton(
-            onPressed: () {},
+            onPressed: () {
+              Navigator.pushNamed(context, '/paymentPage');
+            },
             icon: const Icon(
               Icons.arrow_back_ios_new_rounded,
               color: Colors.black,
@@ -23,7 +25,7 @@ class AddNewCardPage extends StatelessWidget {
         ),
       ),
       body: Padding(
-        padding: const EdgeInsets.all(15.0),
+        padding: const EdgeInsets.all(20.0),
         child: Column(
           children: [
             Row(

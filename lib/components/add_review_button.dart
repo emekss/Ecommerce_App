@@ -7,7 +7,7 @@ class AddReviewButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        Navigator.pushNamed(context, 'addReviewPage');
+        Navigator.pushNamed(context, '/addReviewPage');
       },
       child: Container(
         height: 35,

@@ -223,7 +223,7 @@ class _DetailsPageState extends State<DetailsPage> {
                       ),
                       GestureDetector(
                           onTap: () {
-                            Navigator.pushNamed(context, 'reviewPage');
+                            Navigator.pushNamed(context, '/reviewPage');
                           },
                           child: const Text('View All')),
                     ],
