@@ -1,11 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'package:sample_project/components/bottom_navbar_button.dart';
-
 import 'package:sample_project/components/custom_widget.dart';
 import 'package:sample_project/components/review_column.dart';
+import 'package:sample_project/models/product.dart';
+import 'package:sample_project/models/shop.dart';
 
 class DetailsPage extends StatefulWidget {
-  const DetailsPage({super.key});
+  const DetailsPage({
+    super.key,
+  });
 
   @override
   State<DetailsPage> createState() => _DetailsPageState();
@@ -20,6 +24,21 @@ class _DetailsPageState extends State<DetailsPage> {
   String image5 = 'assets/images/mainhoddie.png';
 
   List<String> size = const ['S', 'M', 'L', 'XL', '2XL'];
+
+  //add to cart button pressed
+  void addToCart(BuildContext context, Product product) {
+    showDialog(
+        context: context,
+        builder: (context) => const AlertDialog(
+              content: Text(
+                'Added to Cart Successfully',
+                style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
+              ),
+            ));
+    // add to cart
+
+    context.read<Shop>().addToCart(product);
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -242,8 +261,11 @@ class _DetailsPageState extends State<DetailsPage> {
           ),
         ),
       ),
-      bottomNavigationBar: const BottomNavbarButton(
-        buttonLabel: 'Add to Cart',
+      bottomNavigationBar: GestureDetector(
+        // onTap: () => addToCart(context, product),
+        child: const BottomNavbarButton(
+          buttonLabel: 'Add to Cart',
+        ),
       ),
     );
   }

@@ -11,16 +11,18 @@ class ProductTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 257,
+      height: 200,
       width: 120,
       child: Column(
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: [
           //producy image
-          Image.asset(
-            product.imageUrl,
-            height: 160,
+          Container(
+            height: 150,
             width: 200,
+            child: Image.asset(
+              product.imageUrl,
+            ),
           ),
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -30,7 +32,7 @@ class ProductTile extends StatelessWidget {
                 style: const TextStyle(fontWeight: FontWeight.bold),
               ),
               Text(
-                product.prices.toStringAsFixed(2),
+                '\$${product.prices.toStringAsFixed(2)}',
                 style: const TextStyle(fontWeight: FontWeight.bold),
               ),
             ],

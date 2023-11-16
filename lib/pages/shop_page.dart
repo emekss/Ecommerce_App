@@ -35,7 +35,7 @@ class _ShopPageState extends State<ShopPage> {
             ]),
         drawer: const Drawer(child: DrawerColumn()),
         body: Padding(
-          padding: const EdgeInsets.all(18.0),
+          padding: const EdgeInsets.all(20.0),
           child:
               Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
             const Text(
@@ -159,7 +159,11 @@ class _ShopPageState extends State<ShopPage> {
                       crossAxisCount: 2),
                   itemBuilder: ((context, index) {
                     final product = products[index];
-                    return ProductTile(product: product);
+                    return GestureDetector(
+                        onTap: () {
+                          Navigator.pushNamed(context, '/detailsPage');
+                        },
+                        child: ProductTile(product: product));
                   })),
             )
           ]),
