@@ -7,9 +7,8 @@ import 'package:sample_project/models/product.dart';
 import 'package:sample_project/models/shop.dart';
 
 class DetailsPage extends StatefulWidget {
-  const DetailsPage({
-    super.key,
-  });
+  final Product product;
+  const DetailsPage({super.key, required this.product});
 
   @override
   State<DetailsPage> createState() => _DetailsPageState();

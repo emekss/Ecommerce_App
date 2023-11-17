@@ -48,7 +48,18 @@ class Shop extends ChangeNotifier {
   ];
 
 // user cart
-  final List<Product> _cart = [];
+  final List<Product> _cart = [
+    Product(
+        title: 'Nike Sportwear Fleece',
+        prices: 120,
+        sizes: 'S, M, L, XL, XXL',
+        imageUrl: 'assets/images/product1.png'),
+    Product(
+        title: 'Nike Sportwear Fleece',
+        prices: 70,
+        sizes: 'S, M, L, XL, XXL',
+        imageUrl: 'assets/images/product4.png')
+  ];
 
 // get product list
   List<Product> get shop => _shop;

@@ -7,6 +7,7 @@ import 'package:sample_project/pages/add_new_card_page.dart';
 import 'package:sample_project/pages/add_review_page.dart';
 import 'package:sample_project/pages/cart_page.dart';
 import 'package:sample_project/pages/home_page.dart';
+import 'package:sample_project/pages/order_confirmed_page.dart';
 
 import 'package:sample_project/pages/payment_page.dart';
 import 'package:sample_project/pages/shop_page.dart';
@@ -30,12 +31,12 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: const AddAddressPage(),
+      home: const CartPage(),
       routes: {
         '/createAcountPage': (context) => const CreateAccountPage(),
         '/signUpPage': (context) => const SignUpPage(),
+        '/orderconfirmedPage': (context) => const OrderConfirmedPage(),
         '/signInPage': (context) => const SignInPage(),
-        '/detailsPage': (context) => const DetailsPage(),
         '/shopPage': (context) => const ShopPage(),
         '/addReviewPage': (context) => const AddReviewPage(),
         '/reviewPage': (context) => const ReviewPage(),
