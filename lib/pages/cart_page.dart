@@ -71,6 +71,14 @@ class _CartPageState extends State<CartPage> {
           'Cart',
           style: TextStyle(color: Colors.black),
         ),
+        leading: IconButton(
+            onPressed: () {
+              Navigator.pushNamed(context, '/detailsPage');
+            },
+            icon: const Icon(
+              Icons.arrow_back_ios_new_rounded,
+              color: Colors.black,
+            )),
       ),
       body: Padding(
         padding: const EdgeInsets.all(20.0),

@@ -7,6 +7,7 @@ import 'package:sample_project/pages/add_new_card_page.dart';
 import 'package:sample_project/pages/add_review_page.dart';
 import 'package:sample_project/pages/cart_page.dart';
 import 'package:sample_project/pages/home_page.dart';
+import 'package:sample_project/pages/logo_page.dart';
 import 'package:sample_project/pages/order_confirmed_page.dart';
 
 import 'package:sample_project/pages/payment_page.dart';
@@ -31,7 +32,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: const CartPage(),
+      home: const LogoPage(),
       routes: {
         '/createAcountPage': (context) => const CreateAccountPage(),
         '/signUpPage': (context) => const SignUpPage(),
@@ -41,6 +42,7 @@ class MyApp extends StatelessWidget {
         '/addReviewPage': (context) => const AddReviewPage(),
         '/reviewPage': (context) => const ReviewPage(),
         '/addNewCardPage': (context) => const AddNewCardPage(),
+        '/detailsPage': (context) => const DetailsPage(),
         '/cartPage': (context) => const CartPage(),
         '/paymentPage': (context) => const PaymentPage(),
       },

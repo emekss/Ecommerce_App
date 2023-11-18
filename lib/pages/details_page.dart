@@ -7,8 +7,7 @@ import 'package:sample_project/models/product.dart';
 import 'package:sample_project/models/shop.dart';
 
 class DetailsPage extends StatefulWidget {
-  final Product product;
-  const DetailsPage({super.key, required this.product});
+  const DetailsPage({super.key});
 
   @override
   State<DetailsPage> createState() => _DetailsPageState();
@@ -46,7 +45,9 @@ class _DetailsPageState extends State<DetailsPage> {
           elevation: 0,
           backgroundColor: Colors.white,
           leading: IconButton(
-            onPressed: () {},
+            onPressed: () {
+              Navigator.pushNamed(context, '/shopPage');
+            },
             icon: const Icon(
               Icons.arrow_back_ios_new_rounded,
               color: Colors.black,
