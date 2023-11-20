@@ -80,6 +80,16 @@ class _SignUpPageState extends State<SignUpPage> {
       bottomNavigationBar: GestureDetector(
           onTap: () {
             Navigator.pushNamed(context, '/signInPage');
+
+            showDialog(
+                context: context,
+                builder: (context) => const AlertDialog(
+                      content: Text(
+                        'Sign Up Successful!',
+                        style: TextStyle(
+                            fontSize: 25, fontWeight: FontWeight.bold),
+                      ),
+                    ));
           },
           child: const BottomNavbarButton(buttonLabel: 'Sign Up')),
     );

@@ -18,7 +18,9 @@ class _PaymentPageState extends State<PaymentPage> {
     return Scaffold(
       appBar: AppBar(
         leading: IconButton(
-            onPressed: () {},
+            onPressed: () {
+              Navigator.pushNamed(context, '/cartPage');
+            },
             icon: const Icon(
               Icons.arrow_back_ios_new_rounded,
               color: Colors.black,

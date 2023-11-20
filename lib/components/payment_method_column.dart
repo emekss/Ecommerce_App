@@ -13,7 +13,9 @@ class PaymentMethodColumn extends StatelessWidget {
             style: TextStyle(fontSize: 19, fontWeight: FontWeight.bold),
           ),
           IconButton(
-              onPressed: () {},
+              onPressed: () {
+                Navigator.pushNamed(context, '/paymentPage');
+              },
               icon: const Icon(Icons.arrow_forward_ios_rounded))
         ]),
         Row(

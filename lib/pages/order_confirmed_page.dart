@@ -62,8 +62,11 @@ class OrderConfirmedPage extends StatelessWidget {
           ],
         ),
       ),
-      bottomNavigationBar:
-          const BottomNavbarButton(buttonLabel: 'Continue Shopping'),
+      bottomNavigationBar: GestureDetector(
+          onTap: () {
+            Navigator.pushNamed(context, '/shopPage');
+          },
+          child: const BottomNavbarButton(buttonLabel: 'Continue Shopping')),
     );
   }
 }

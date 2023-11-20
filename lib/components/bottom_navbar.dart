@@ -7,7 +7,7 @@ class CustomBottomNavbar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: Color(0xff9775fa),
+      color: const Color(0xff9775fa),
       child: const Padding(
         padding: EdgeInsets.all(8.0),
         child: GNav(

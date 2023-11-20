@@ -23,6 +23,8 @@ class _DetailsPageState extends State<DetailsPage> {
 
   List<String> size = const ['S', 'M', 'L', 'XL', '2XL'];
 
+  Product get product => product;
+
   //add to cart button pressed
   void addToCart(BuildContext context, Product product) {
     showDialog(
@@ -262,7 +264,9 @@ class _DetailsPageState extends State<DetailsPage> {
         ),
       ),
       bottomNavigationBar: GestureDetector(
-        // onTap: () => addToCart(context, product),
+        onTap: () {
+          Navigator.pushNamed(context, '/cartPage');
+        },
         child: const BottomNavbarButton(
           buttonLabel: 'Add to Cart',
         ),

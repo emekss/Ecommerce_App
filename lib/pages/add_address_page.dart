@@ -18,7 +18,9 @@ class _AddAddressPageState extends State<AddAddressPage> {
       appBar: AppBar(
         elevation: 0,
         leading: IconButton(
-            onPressed: () {},
+            onPressed: () {
+              Navigator.pushNamed(context, '/cartPage');
+            },
             icon: const Icon(
               Icons.arrow_back_ios_new_rounded,
               color: Colors.black,

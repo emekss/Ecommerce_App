@@ -59,7 +59,7 @@ class _SignInPageState extends State<SignInPage> {
             children: [
               customTextField(title: 'Username'),
               const SizedBox(height: 12),
-              customTextField(title: 'Password'),
+              customPasswordTextField(title: 'Password'),
               const SizedBox(height: 15),
               Row(
                 mainAxisAlignment: MainAxisAlignment.end,
