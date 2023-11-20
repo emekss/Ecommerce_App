@@ -34,7 +34,6 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       home: const LogoPage(),
       routes: {
-        '/createAcountPage': (context) => const CreateAccountPage(),
         '/signUpPage': (context) => const SignUpPage(),
         '/orderconfirmedPage': (context) => const OrderConfirmedPage(),
         '/signInPage': (context) => const SignInPage(),
@@ -45,6 +44,8 @@ class MyApp extends StatelessWidget {
         '/detailsPage': (context) => const DetailsPage(),
         '/cartPage': (context) => const CartPage(),
         '/paymentPage': (context) => const PaymentPage(),
+        '/homePage': (context) => const HomePage(),
+        '/accountPage': (context) => const CreateAccountPage(),
       },
     );
   }

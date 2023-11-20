@@ -46,7 +46,7 @@ class _SignUpPageState extends State<SignUpPage> {
             children: [
               customTextField(title: 'Username'),
               const SizedBox(height: 12),
-              customTextField(title: 'Password'),
+              customPasswordTextField(title: 'Password'),
               const SizedBox(height: 12),
               customTextField(title: 'Email Address'),
               const SizedBox(height: 15),

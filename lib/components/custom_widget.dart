@@ -41,6 +41,17 @@ Widget customTextField({
   required String title,
 }) {
   return TextField(
+    decoration: InputDecoration(
+      border: OutlineInputBorder(borderRadius: BorderRadius.circular(12)),
+      hintText: title,
+    ),
+  );
+}
+
+Widget customPasswordTextField({
+  required String title,
+}) {
+  return TextField(
     obscureText: true,
     decoration: InputDecoration(
       border: OutlineInputBorder(borderRadius: BorderRadius.circular(12)),

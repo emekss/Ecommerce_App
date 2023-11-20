@@ -7,9 +7,14 @@ class LogoPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.purple[300],
-      body: Center(
-        child: Image.asset(
-          'assets/images/logo.png',
+      body: GestureDetector(
+        onTap: () {
+          Navigator.pushNamed(context, '/homePage');
+        },
+        child: Center(
+          child: Image.asset(
+            'assets/images/logo.png',
+          ),
         ),
       ),
     );

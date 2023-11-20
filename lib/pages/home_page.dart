@@ -48,7 +48,7 @@ class HomePage extends StatelessWidget {
               Row(mainAxisAlignment: MainAxisAlignment.spaceEvenly, children: [
                 GestureDetector(
                   onTap: () {
-                    Navigator.pushNamed(context, "/createAccountPage");
+                    Navigator.pushNamed(context, "/accountPage");
                   },
                   child: Card(
                     child: Container(
