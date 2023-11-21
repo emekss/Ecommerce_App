@@ -68,7 +68,7 @@ class DrawerColumn extends StatelessWidget {
             leading: const Icon(Icons.shopping_bag),
             title: const Text('O R D E R'),
             onTap: () {
-              Navigator.pushNamed(context, 'cartPage');
+              Navigator.pushNamed(context, '/cartPage');
             },
           ),
           const ListTile(

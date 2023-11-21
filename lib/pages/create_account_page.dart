@@ -60,7 +60,7 @@ class CreateAccountPage extends StatelessWidget {
         Column(children: [
           GestureDetector(
             onTap: () {
-              Navigator.pushNamed(context, 'signUpPage');
+              Navigator.pushNamed(context, '/signUpPage');
             },
             child: RichText(
               text: const TextSpan(
