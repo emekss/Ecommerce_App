@@ -94,7 +94,6 @@ Before you begin, ensure you have the following installed:
    ```bash
    flutter run
    ```
-
 ## Usage
 
 1. Launch the app.
