@@ -22,17 +22,16 @@ Welcome to the E-Commerce App built using Flutter! This README provides an overv
 - **Login:** Users can log in with their credentials.
 - **Create Account:** New users can create an account by providing their details.
 
-### 2. User Profile
-
-- **View Profile:** Logged-in users can view and edit their profiles.
-- **Profile Picture:** Users can upload a profile picture.
-
 
 ### 3. Screenshots
 
 
 
-https://github.com/emekss/Ecommerce_App/assets/110977719/3c1889d9-56a0-4f89-bc42-72e2943cb751
+
+https://github.com/emekss/Ecommerce_App/assets/110977719/d68e9d5d-494e-430b-912c-bb3bfd5a0617
+
+
+
 
 
 
@@ -46,14 +45,8 @@ https://github.com/emekss/Ecommerce_App/assets/110977719/3c1889d9-56a0-4f89-bc42
 ### 5. Order Management
 
 - **Place Orders:** Users can place orders for the items in their cart.
-- **Order History:** Users can view their order history.
 
-### 6. Search and Filtering
-
-- **Search Products:** Users can search for products by keywords.
-- **Filter Products:** Users can filter products by categories or other attributes.
-
-### 7. Payment and Checkout
+### 6. Payment and Checkout
 
 - **Secure Payment:** Users can make secure payments for their orders.
 - **Checkout Process:** A smooth and intuitive checkout process.
